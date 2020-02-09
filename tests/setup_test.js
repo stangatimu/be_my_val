@@ -6,6 +6,6 @@ env.config();
 
 const { setUpDB } = require("../lib");
 
-setUpDB();
+before(async ()=> await setUpDB())
 
 after(() => mongoose.disconnect());
