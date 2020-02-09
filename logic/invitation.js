@@ -27,6 +27,15 @@ const Invitation = {
         
         // return invitation id
         return new_inivitation.id;        
+    },
+    async getById(_id){
+
+        // validate id
+        if(!_id) throw new Error("invitation id is required")
+        if(!mongoose.isValidObjectId(_id)) throw new Error("provided id is not a valid id");
+
+        // findById and return
+        return await mongoose.model('Invitation').findById(_id).lean();
     }
 }
 module.exports = Invitation;
