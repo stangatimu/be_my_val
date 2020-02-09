@@ -5,12 +5,11 @@ const schema = mongoose.Schema({
         name:{ type:String, required:[true,'recepient name is required']},
         alias:{ type:String }
     },
-    sender:{
-        name:{ type:String, require:[true,'sender\'s name is required ']}
-    },
+    sender:{ type:String, require:[true,'sender\'s name is required ']},
     status:{
         type:Boolean, default:false
-    }
+    },
+    date: {type:Date, default: Date.now}
 });
 
 const model = mongoose.model('Invitation',schema);
