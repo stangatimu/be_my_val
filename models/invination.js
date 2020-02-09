@@ -6,6 +6,7 @@ const schema = mongoose.Schema({
         alias:{ type:String }
     },
     sender:{ type:String, require:[true,'sender\'s name is required ']},
+    comment:{ type:String, default:"" },
     status:{
         type:Boolean, default:false
     },
