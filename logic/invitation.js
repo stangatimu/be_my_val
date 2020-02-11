@@ -26,10 +26,9 @@ const Invitation = {
         let new_inivitation = await mongoose.model("Invitation").create(params);
         
         // return invitation id
-        return new_inivitation.id;        
+        return new_inivitation;        
     },
     async getById(_id){
-
         // validate id
         if(!_id) throw new Error("invitation id is required")
         if(!mongoose.isValidObjectId(_id)) throw new Error("provided id is not a valid id");
@@ -70,7 +69,7 @@ const Invitation = {
         // save invitation
         await invitation.save();
 
-        return true;
+        return invitation.status;
     }
 }
 module.exports = Invitation;
