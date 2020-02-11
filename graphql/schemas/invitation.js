@@ -25,8 +25,6 @@ module.exports = `
     }
 
     input InvitationI {
-        _id: ID!
-        date: String!
         sender:String!
         recepient:RecepientI!
     }
@@ -37,6 +35,6 @@ module.exports = `
     }
 
     type InvitationQ {
-        GetById (_id:ID!): InvitationO
+        GetByID(_id:ID!): InvitationO
     }
 `
