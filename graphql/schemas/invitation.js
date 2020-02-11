@@ -25,8 +25,6 @@ module.exports = `
     }
 
     input InvitationI {
-        _id: ID!
-        date: String!
         sender:String!
         recepient:RecepientI!
     }
