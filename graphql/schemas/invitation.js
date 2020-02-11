@@ -35,6 +35,6 @@ module.exports = `
     }
 
     type InvitationQ {
-        GetById (_id:ID!): InvitationO
+        GetByID(_id:ID!): InvitationO
     }
 `
