@@ -9,6 +9,9 @@ const Resolvers = {
     },
     async RespondToInvitation({ params },req){
         return Invitation.respondToInvitation(params,req);
+    },
+    async GetManyByIds({ _ids }, req){
+        return Invitation.getManyByIds(_ids,req);
     }
 }
 

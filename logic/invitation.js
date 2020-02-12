@@ -36,6 +36,15 @@ const Invitation = {
         // findById and return
         return await mongoose.model('Invitation').findById(_id).lean();
     },
+    async getManyByIds(_ids){
+        // check array is empty
+        if(!_ids.length) return [];
+
+        // get users by id
+        return await mongoose.model('Invitation').find({'_id':{
+            $in:_ids
+        }}).lean();
+    },
     async respondToInvitation(params,req){
 
         // validate id
