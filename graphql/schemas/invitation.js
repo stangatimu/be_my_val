@@ -36,5 +36,6 @@ module.exports = `
 
     type InvitationQ {
         GetByID(_id:ID!): InvitationO
+        GetManyByIds(_ids:[ID]!): [InvitationO]
     }
 `
